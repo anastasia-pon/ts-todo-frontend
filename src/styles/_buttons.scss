@@ -1,0 +1,36 @@
+.btn-accent {
+  background-color: #00a0df;
+  padding: 10px 30px;
+  width: 200px;
+  margin: 0 auto;
+  color: white;
+  transition: all 0.3s;
+}
+.btn {
+  border: none;
+}
+.home__button {
+  margin: 40px 0;
+}
+
+.signup__btn {
+  margin-top: 10px;
+}
+
+.btn-accent:hover {
+  background-color: #067faf;
+  transition: all 0.3s;
+}
+
+.btn--grey {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #9b9b9b;
+  color: white;
+  transition: all 0.3s;
+}
+
+.btn--grey:hover {
+  background-color: #7c7c7c;
+  transition: all 0.3s;
+}

@@ -1,0 +1,23 @@
+.addtask, .edittask {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #edfaff;
+  box-shadow: 0px 0px 10px #d2cece;
+}
+.addtask input, .edittask input {
+  margin: 10px;
+}
+.addsub {
+  text-align: center;
+}
+.input__cost {
+  max-width: 100px;
+}
+
+.input__fat, .input__carbs, .input__protein {
+  max-width: 100px;
+}
+.addtask__btns .btn {
+  margin: 10px;
+}

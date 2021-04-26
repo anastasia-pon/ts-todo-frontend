@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+  box-shadow: 0px 0px 30px 1px #ccc8c8;
+  background-color: #edfaff;
+}
+
+.header__container {
+  text-align: center;
+}
+
+.header__title {
+  padding: 30px 0;
+}
+
+.header__nav {
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+
+.nav__item {
+  padding-right: 30px;
+}

@@ -1,0 +1,29 @@
+.main__container {
+  text-align: center;
+}
+
+.home__button {
+  margin: 30px 0;
+}
+
+.lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.lists__card {
+  box-shadow: 0px 0px 10px #d2cece;
+  margin: 20px 10px;
+  background-color: #edfaff;
+}
+
+.lists__card__container {
+  width: 300px;
+  min-height: 100px;
+  padding: 20px;
+}
+
+.lists__card__btns {
+  margin: 20px 0;
+}

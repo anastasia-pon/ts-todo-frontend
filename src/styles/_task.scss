@@ -1,0 +1,34 @@
+.tasks__container {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.task--done {
+  order: 1;
+}
+.task__container .btn--grey {
+  padding: 5px 20px;
+}
+.task--done .task__title {
+  text-decoration: line-through;
+}
+.task__container {
+  padding: 20px;
+}
+
+.task__title {
+  font-weight: 600;
+}
+
+.task {
+  border-top: 1px solid black;
+}
+
+.task.work > .task__container {
+  background-color: #bfedff;
+}
+
+.task.food > .task__container {
+  background-color: #bfffcf;
+}

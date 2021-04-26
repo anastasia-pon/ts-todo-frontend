@@ -1,0 +1,41 @@
+.create, .signin, .signup {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.create__desc { 
+  width: 400px;
+  resize:vertical;
+}
+
+.create__title { 
+  width: 400px;
+}
+
+.create__title, .create__desc, .signin__pass, .signin__email {
+  margin: 20px;
+  padding: 10px;
+}
+
+.signup__conf, .signup__pass, .signup__email, .signup__last, .signup__first {
+  margin: 10px;
+  padding: 10px;
+}
+
+.link {
+  margin-top: 10px;
+}
+
+.link:hover {
+  color: rgb(0, 102, 255);
+}
+
+.signup__message {
+  font-size: 14px;
+}
+
+.error {
+  background-color: rgb(255, 199, 199);
+  padding: 20px;
+}
