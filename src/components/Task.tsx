@@ -184,6 +184,7 @@ const Task = (props: TaskProps) => {
         </form>
       ) : (
         <div className="task__container">
+          {done ? <i className="task__checkbox far fa-check-square" /> : <i className="task__checkbox far fa-square" />}
           <div className="task__title">{task.title}</div>
           {task.cost && (
             <p className="task__cost">

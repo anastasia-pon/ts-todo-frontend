@@ -64,7 +64,7 @@ const SignUp = () => {
 
   return (
     <form className="signup" onSubmit={handleSubmit}>
-      <h2>Sign Up</h2>
+      <h2 className="signup__title">Sign Up</h2>
       <label htmlFor="firstName">
         <input
           className="signup__first"

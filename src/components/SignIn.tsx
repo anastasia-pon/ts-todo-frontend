@@ -8,7 +8,7 @@ const SignIn = () => {
   const { authState } = useOktaAuth();
 
   if (authState.isPending) {
-    return <div>Loading...</div>;
+    return <div className="loader">Loading...</div>;
   }
   return authState.isAuthenticated
     ? <Redirect to={{ pathname: '/' }} />

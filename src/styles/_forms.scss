@@ -31,11 +31,23 @@
   color: rgb(0, 102, 255);
 }
 
-.signup__message {
+.signup__message, .message {
   font-size: 14px;
 }
 
 .error {
   background-color: rgb(255, 199, 199);
   padding: 20px;
+}
+
+.create .btn {
+  margin: 20px auto;
+}
+
+.create__title, .signup__title {
+  margin: 40px auto 0;
+}
+
+.signin {
+  padding-top: 40px;
 }

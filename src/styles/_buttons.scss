@@ -34,3 +34,7 @@
   background-color: #7c7c7c;
   transition: all 0.3s;
 }
+
+.btn:focus {
+  outline:0;
+}

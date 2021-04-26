@@ -19,7 +19,7 @@ const CreateList = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   if (!userData) {
-    return <div>Loading...</div>;
+    return <div className="loader">Loading...</div>;
   }
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => setTitle(e.target.value);
@@ -43,7 +43,7 @@ const CreateList = () => {
   };
   return (
     <form className="create" onSubmit={handleSubmit}>
-      <h2>Create a ToDo list</h2>
+      <h2 className="create__title">Create a ToDo list</h2>
       <label htmlFor="title">
         <input
           className="create__title"
@@ -60,12 +60,14 @@ const CreateList = () => {
           className="create__desc"
           id="desc"
           value={desc}
+          maxlength="200"
+          rows="4"
           placeholder="Add a description *"
           onChange={handleDescriptionChange}
           required
         />
       </label>
-      <p>Fields marked with * are required</p>
+      <p className="message">Fields marked with * are required</p>
       <button className="btn btn-accent" type="submit">Create</button>
       {error && <Error setError={setError} errorMessage={errorMessage} />}
     </form>
