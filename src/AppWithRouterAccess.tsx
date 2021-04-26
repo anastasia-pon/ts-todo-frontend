@@ -19,7 +19,7 @@ const AppWithRouterAccess = () => {
   };
   const OktaAuthObj: OktaAuthType = {
     issuer: 'https://dev-34125052.okta.com/oauth2/default',
-    clientId: '0oalwdz3sZLWSGoxd5d6',
+    clientId: '0oanbvnysKWgEC4vd5d6',
     redirectUri: `${window.location.origin}/login/callback`,
     onAuthRequired,
     pkce: true,
