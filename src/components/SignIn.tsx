@@ -4,7 +4,7 @@ import { useOktaAuth } from '@okta/okta-react';
 
 import SignInForm from '../views/SignInForm';
 
-const SignIn: React.FC = () => {
+const SignIn = () => {
   const { authState } = useOktaAuth();
 
   if (authState.isPending) {

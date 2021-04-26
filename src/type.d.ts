@@ -1,4 +1,5 @@
 declare module 'react';
+declare module 'react-router';
 
 interface OktaAuthType {
   issuer: string;

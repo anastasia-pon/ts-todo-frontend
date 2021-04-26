@@ -1,3 +1,6 @@
+/* eslint-disable */
+//@ts-nocheck
+// possible incompatibity between react and react type versions
 import * as React from 'react';
 import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -6,7 +9,7 @@ import { AllListsContext } from '../context/AllListsContext';
 
 import Error from '../components/Error';
 
-const Home: React.FC = () => {
+const Home = () => {
   const history = useHistory();
   const { lists, fetchLists, userData } = useContext(AllListsContext);
   const [error, setError] = useState(false);

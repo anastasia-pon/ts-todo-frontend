@@ -12,12 +12,16 @@ const AllListsContextDefault: AllListsContextState = {
   fetchLists: () => {},
 };
 
-export const AllListsContext = createContext<AllListsContextState>(AllListsContextDefault);
+interface AllListsProviderProps {
+  children?: JSX.Element|JSX.Element[];
+}
 
-export const AllListsProvider: React.FC = ({ children }) => {
+export const AllListsContext = createContext(AllListsContextDefault);
+
+export const AllListsProvider = ({ children }: AllListsProviderProps) => {
   const { authState, oktaAuth } = useOktaAuth();
-  const [userData, setUserData] = useState<string[]>(AllListsContextDefault.userData);
-  const [lists, setLists] = useState<ListState[]>(AllListsContextDefault.lists);
+  const [userData, setUserData] = useState(AllListsContextDefault.userData);
+  const [lists, setLists] = useState(AllListsContextDefault.lists);
   const fetchLists = async () => {
     const response = await getAllLists(userData[0], userData[1]);
     if (response.ok) {

@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import { useOktaAuth } from '@okta/okta-react';
 
-const Nav: React.FC = () => {
+const Nav = () => {
   const { authState, oktaAuth } = useOktaAuth();
 
   return (
@@ -12,7 +11,7 @@ const Nav: React.FC = () => {
         <nav className="header__nav">
           {authState.isAuthenticated && (
             <>
-              <Link className="nav__item" to="/">Home</Link>
+              <a className="nav__item" href="/">Home</a>
               <button className="nav__item" type="button" onClick={() => { oktaAuth.signOut(); }}>Logout</button>
             </>
           )}

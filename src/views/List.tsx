@@ -8,8 +8,8 @@ import Error from '../components/Error';
 import AddTask from '../components/AddTask';
 import Task from '../components/Task';
 
-const List: React.FC = () => {
-  const { roomId } = useParams<{ roomId: string }>();
+const List = () => {
+  const { roomId } = useParams();
   const {
     fullList,
     handleAddTask,

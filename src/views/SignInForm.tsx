@@ -1,10 +1,13 @@
+/* eslint-disable */
+//@ts-nocheck
+// possible incompatibity between react and react type versions (events)
 import * as React from 'react';
 import { useState } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 
-const SignInForm: React.FC = () => {
+const SignInForm = () => {
   const { oktaAuth } = useOktaAuth();
-  const [sessionToken, setSessionToken] = useState<string | undefined>();
+  const [sessionToken, setSessionToken] = useState();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 

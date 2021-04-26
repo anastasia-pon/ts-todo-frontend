@@ -7,7 +7,7 @@ interface ErrorProps {
   errorMessage: string;
 }
 
-const Error: React.FC<ErrorProps> = (props) => {
+const Error = (props: ErrorProps) => {
   const { setError, errorMessage } = props;
 
   return (

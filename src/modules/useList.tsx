@@ -16,11 +16,11 @@ type UseListProps = (roomId: string) => {
 }
 
 const useList:  UseListProps = (roomId: string) => {
-  const [guests, setGuests] = useState<Guest[]>([]);
-  const [fullList, setFullList] = useState<FullListState>();
+  const [guests, setGuests] = useState([]);
+  const [fullList, setFullList] = useState();
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const socketRef = useRef<SocketIOClient.Socket>();
+  const socketRef = useRef();
 
   const handleAddTask = (newTask: BaseTask) => {
     if (socketRef.current) {

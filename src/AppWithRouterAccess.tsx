@@ -12,7 +12,7 @@ import SignIn from './components/SignIn';
 import SignUp from './views/SignUpForm';
 import CreateList from './views/CreateList';
 
-const AppWithRouterAccess: React.FC = () => {
+const AppWithRouterAccess = () => {
   const history = useHistory();
   const onAuthRequired = () => {
     history.push('/login');

@@ -1,11 +1,15 @@
-import React from 'react';
+/* eslint-disable */
+//@ts-nocheck
+import * as React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppWithRouterAccess from './AppWithRouterAccess';
 
-const App: React.FC = () => (
-  <Router>
-    <AppWithRouterAccess />
-  </Router>
+const App = () => (
+  <>
+    <Router>
+      <AppWithRouterAccess />
+    </Router>
+  </>
 );
 
 export default App;

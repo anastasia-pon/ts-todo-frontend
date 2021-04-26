@@ -1,4 +1,5 @@
-/* eslint-disable max-len */
+/* eslint-disable */
+//@ts-nocheck
 import * as React from 'react';
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
@@ -11,7 +12,7 @@ interface AddTaskProps {
     addingSubtask: boolean;
 }
 
-const AddTask: React.FC<AddTaskProps> = (props) => {
+const AddTask = (props: AddTaskProps) => {
   const {
     listId, parentId, handleAddTask, addingSubtask, setAddingSubtask,
   } = props;
