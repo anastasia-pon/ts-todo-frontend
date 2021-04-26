@@ -60,7 +60,7 @@ const CreateList = () => {
           className="create__desc"
           id="desc"
           value={desc}
-          maxlength="200"
+          maxLength="200"
           rows="4"
           placeholder="Add a description *"
           onChange={handleDescriptionChange}
