@@ -49,7 +49,7 @@ const List = () => {
           <p className="list__container__link">
             Invite co-editors:
             {' '}
-            {fullList.list.desc}
+            {window.location.href}
           </p>
           <AddTask
             setAddingSubtask={() => {}}
