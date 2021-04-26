@@ -1,4 +1,4 @@
-const baseUrl = process.env.REACT_APP_BASE_URL;
+const baseUrl = 'https://ts-todo-backend.herokuapp.com/';
 
 const createNewUser: any = (user: User) => fetch(`${baseUrl}api/users`, {
   method: 'POST',

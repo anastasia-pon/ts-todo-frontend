@@ -2,7 +2,7 @@ import {
   useEffect, useRef, useState,
 } from 'react';
 import socketIOClient from 'socket.io-client';
-const SOCKET_SERVER_URL = 'http://localhost:8000';
+const SOCKET_SERVER_URL = 'https://ts-todo-backend.herokuapp.com/';
 
 type UseListProps = (roomId: string) => {
   fullList?: FullListState,

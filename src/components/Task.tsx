@@ -1,9 +1,11 @@
 /* eslint-disable */
 //@ts-nocheck
-// possible incompatibity between react and react type versions (event types)
+// possible incompatibity between react and react type versions during build (event types)
 import * as React from 'react';
 import { useState } from 'react';
 import AddTask from './AddTask';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquare } from '@fortawesome/free-solid-svg-icons';
 
 interface TaskProps {
   tasks: BaseTask[];
