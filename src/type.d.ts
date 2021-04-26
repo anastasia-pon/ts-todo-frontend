@@ -1,3 +1,5 @@
+declare module 'react';
+
 interface OktaAuthType {
   issuer: string;
   clientId: string;
