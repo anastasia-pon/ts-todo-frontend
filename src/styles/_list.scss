@@ -1,6 +1,8 @@
 .list__guests {
   text-align: right;
   margin: 20px;
+  position: absolute;
+  right: 0;
 }
 
 .list__container {
@@ -11,7 +13,7 @@
   margin: 20px 0;
 }
 
-.list__container__desc {
+.list__container__desc, .list__container__link {
   padding: 20px 0;
 }
 

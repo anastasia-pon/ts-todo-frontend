@@ -46,6 +46,11 @@ const List = () => {
         <div className="list__container" id={fullList.list.listId}>
           <h2>{fullList.list.title}</h2>
           <p className="list__container__desc">{fullList.list.desc}</p>
+          <p className="list__container__link">
+            Invite co-editors:
+            {' '}
+            {fullList.list.desc}
+          </p>
           <AddTask
             setAddingSubtask={() => {}}
             addingSubtask={false}
