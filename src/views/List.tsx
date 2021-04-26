@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/* eslint-disable @typescript-eslint/no-empty-function */
 import * as React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import useList from '../modules/useList';

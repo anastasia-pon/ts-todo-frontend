@@ -2,26 +2,42 @@ import {
   useEffect, useRef, useState,
 } from 'react';
 import socketIOClient from 'socket.io-client';
-
 const SOCKET_SERVER_URL = 'http://localhost:8000';
 
-const useList = (roomId: string) => {
+type UseListProps = (roomId: string) => {
+  fullList?: FullListState,
+  handleAddTask: (task: BaseTask) => void,
+  handleUpdateTask: (task: BaseTask) => void;
+  handleDeleteTask: (taskId: string, parentId: string, listId: string) => void;
+  guests: Guest[];
+  error: boolean;
+  setError: (err: boolean) => void;
+  errorMessage: string;
+}
+
+const useList:  UseListProps = (roomId: string) => {
   const [guests, setGuests] = useState<Guest[]>([]);
   const [fullList, setFullList] = useState<FullListState>();
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const socketRef = useRef<any>();
+  const socketRef = useRef<SocketIOClient.Socket>();
 
   const handleAddTask = (newTask: BaseTask) => {
-    socketRef.current.emit('task:add', newTask);
+    if (socketRef.current) {
+      socketRef.current.emit('task:add', newTask);
+    }
   };
 
   const handleUpdateTask = (updatedTask: BaseTask) => {
-    socketRef.current.emit('task:update', updatedTask);
+    if (socketRef.current) {
+      socketRef.current.emit('task:update', updatedTask);
+    }
   };
 
   const handleDeleteTask = (taskId: string, parentId: string, listId: string) => {
-    socketRef.current.emit('task:delete', taskId, parentId, listId);
+    if (socketRef.current) {
+      socketRef.current.emit('task:delete', taskId, parentId, listId);
+    }
   };
 
   useEffect(() => {
@@ -43,12 +59,16 @@ const useList = (roomId: string) => {
 
     socketRef.current.on('participants:all', (participants: Guest[]) => {
       if (participants.length > 0) {
-        const currentGuests = participants.filter((p) => p.id !== socketRef.current.id);
+        const currentGuests = participants.filter((p) => p.id !== socketRef.current!.id);
         setGuests(currentGuests);
       }
     });
 
-    return () => socketRef.current.disconnect();
+    return () => {
+      if (socketRef.current) {
+        socketRef.current.disconnect();
+      }
+    }
   }, [roomId]);
 
   return {

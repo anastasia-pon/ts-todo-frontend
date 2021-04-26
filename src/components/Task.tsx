@@ -1,17 +1,18 @@
 /* eslint-disable max-len */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import * as React from 'react';
 import { useState } from 'react';
 import AddTask from './AddTask';
 
-const Task = (props: {
+interface TaskProps {
   tasks: BaseTask[];
   task: BaseTask;
   handleUpdateTask: (task: BaseTask) => void;
   handleDeleteTask: (taskId: string, parentId: string, listId: string) => void;
   handleAddTask: (task: BaseTask) => void,
-}) => {
+}
+
+const Task: React.FC<TaskProps> = (props) => {
   const {
     task, handleUpdateTask, handleDeleteTask, handleAddTask, tasks,
   } = props;

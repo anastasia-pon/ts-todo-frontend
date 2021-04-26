@@ -2,10 +2,12 @@ import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const Error = (props: {
+interface ErrorProps {
   setError: (err: boolean) => void;
   errorMessage: string;
-}) => {
+}
+
+const Error: React.FC<ErrorProps> = (props) => {
   const { setError, errorMessage } = props;
 
   return (

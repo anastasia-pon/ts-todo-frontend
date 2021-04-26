@@ -1,16 +1,17 @@
 /* eslint-disable max-len */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import * as React from 'react';
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
-const AddTask = (props: {
-  listId: string;
-  parentId: string;
-  handleAddTask: (task: BaseTask) => void,
-  setAddingSubtask: (done: boolean) => void;
-  addingSubtask: boolean;
-}) => {
+interface AddTaskProps {
+    listId: string;
+    parentId: string;
+    handleAddTask: (task: BaseTask) => void,
+    setAddingSubtask: (done: boolean) => void;
+    addingSubtask: boolean;
+}
+
+const AddTask: React.FC<AddTaskProps> = (props) => {
   const {
     listId, parentId, handleAddTask, addingSubtask, setAddingSubtask,
   } = props;

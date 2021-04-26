@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/* eslint-disable @typescript-eslint/no-empty-function */
 import * as React from 'react';
 import { createContext, useState, useEffect } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
@@ -15,16 +16,16 @@ export const AllListsContext = createContext<AllListsContextState>(AllListsConte
 
 export const AllListsProvider: React.FC = ({ children }) => {
   const { authState, oktaAuth } = useOktaAuth();
-  const [userData, setUserData] = useState<string[]>(AllListsContextDefault.userData!);
+  const [userData, setUserData] = useState<string[]>(AllListsContextDefault.userData);
   const [lists, setLists] = useState<ListState[]>(AllListsContextDefault.lists);
   const fetchLists = async () => {
-    const response = await getAllLists(userData![0], userData![1]);
+    const response = await getAllLists(userData[0], userData[1]);
     if (response.ok) {
       const allLists = await response.json();
       setLists(allLists);
     }
   };
-  useEffect(() => (authState.isAuthenticated ? setUserData([authState.accessToken!.claims.uid, authState.accessToken!.accessToken]) : setUserData([])), [authState, oktaAuth]);
+  useEffect(() => (authState.isAuthenticated && authState.accessToken ? setUserData([authState.accessToken.claims.uid, authState.accessToken.accessToken]) : setUserData([])), [authState, oktaAuth]);
 
   useEffect(() => {
     if (authState.isAuthenticated) {
