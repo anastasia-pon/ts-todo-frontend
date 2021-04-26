@@ -1,6 +1,6 @@
 /* eslint-disable */
 //@ts-nocheck
-// possible incompatibity between react and react type versions
+// possible incompatibity between react and react type versions (event types)
 import * as React from 'react';
 import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
