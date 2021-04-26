@@ -28,7 +28,7 @@ const List = () => {
   }
 
   if (!fullList || Object.keys(fullList.list).length === 0) {
-    return <p>List does not exist.</p>;
+    return null;
   }
   return (
     <div className="main__container">
