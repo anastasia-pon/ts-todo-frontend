@@ -4,9 +4,6 @@
 import * as React from 'react';
 import { useState } from 'react';
 import AddTask from './AddTask';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquare } from '@fortawesome/free-solid-svg-icons';
-import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 
 interface TaskProps {
   tasks: BaseTask[];
@@ -85,9 +82,6 @@ const Task = (props: TaskProps) => {
   };
   return (
     <article className={done ? `task ${task.type} task--done` : `task ${task.type}`} onClick={(e) => { e.stopPropagation(); handleTaskToggle(); }} onKeyUp={(e) => (e.key === 'Enter' ? handleTaskToggle() : null)}>
-      <div className="task__checkbox">
-        {done ? <FontAwesomeIcon icon={faCheckSquare} /> : <FontAwesomeIcon icon={faTimes} />}
-      </div>
       {editing ? (
         <form className="edittask" id={task.taskId} onSubmit={handleSubmit} onClick={(e) => e.stopPropagation()} onKeyUp={(e) => e.stopPropagation()}>
           <label htmlFor="title">
